@@ -5,29 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StellarCast Weather</title>
     <link rel="icon" href="public/favicon.ico" type="image/x-icon">
-    <!-- Link to your custom CSS file -->
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="app-background">
 
-    <!-- Dynamic Background Overlay (for weather conditions) -->
     <div id="weather-background-overlay" class="weather-background-overlay"></div>
 
     <div class="weather-app-container">
-
         <!-- Search Section -->
         <div class="search-section">
-            <input type="text" id="city-input" placeholder="Enter city name..."
-                   class="city-input">
-            <button id="search-btn"
-                    class="search-btn">
+            <input type="text" id="city-input" placeholder="Enter city name..." class="city-input">
+            <button id="search-btn" class="search-btn">
                 <i class="fas fa-search"></i>
             </button>
-            <button id="location-btn"
-                    class="location-btn"
-                    title="Use current location">
+            <button id="location-btn" class="location-btn" title="Use current location">
                 <i class="fas fa-map-marker-alt"></i>
             </button>
         </div>
@@ -37,13 +29,12 @@
             <i class="fas fa-exclamation-triangle"></i>City not found or API error. Please try again.
         </div>
 
-        <!-- Weather Display Section (Current Weather) -->
+        <!-- Weather Display Section -->
         <div id="weather-display" class="current-weather-display hidden">
             <h2 id="city-name" class="city-name"></h2>
             <p id="date-time" class="date-time"></p>
-            
+
             <img id="weather-icon" src="" alt="Weather Icon" class="weather-icon">
-            
             <p id="temperature" class="temperature">
                 <span class="temp-value"></span><sup class="temp-unit">&deg;C</sup>
             </p>
@@ -60,41 +51,28 @@
                     <p class="detail-label">Wind Speed</p>
                     <p id="wind-speed" class="detail-value"></p>
                 </div>
-                <div class="detail-item">
-                    <i class="fas fa-sun detail-icon uv-icon"></i>
-                    <p class="detail-label">UV Index</p>
-                    <p id="uv-index" class="detail-value">N/A</p>
-                </div>
-                 <div class="detail-item">
-                    <i class="fas fa-smog detail-icon air-quality-icon"></i>
-                    <p class="detail-label">Air Quality</p>
-                    <p id="air-quality" class="detail-value">N/A</p>
-                </div>
             </div>
         </div>
 
-        <!-- 5-Day Forecast Section -->
+        <!-- Forecast Section -->
         <div id="forecast-section" class="forecast-section hidden">
             <h3 class="section-title forecast-title">5-Day Forecast</h3>
             <div id="forecast-cards" class="forecast-cards-grid">
-                <!-- Forecast cards will be injected here by JavaScript -->
+                <!-- Forecast cards injected by JS -->
             </div>
         </div>
 
-        <!-- Previous Searches Section -->
+        <!-- Previous Searches -->
         <div id="previous-searches-section" class="previous-searches-section hidden">
             <h3 class="section-title previous-searches-title">Previous Searches</h3>
-            <div id="search-history" class="search-history-grid">
-                <!-- Search history items will be injected here by JavaScript -->
-            </div>
+            <div id="search-history" class="search-history-grid"></div>
         </div>
 
-        <!-- Loading Indicator -->
+        <!-- Loading Spinner -->
         <div id="loading-spinner" class="loading-spinner hidden">
             <i class="fas fa-spinner fa-spin"></i>
             <p>Fetching weather data...</p>
         </div>
-
     </div>
 
     <script src="main.js"></script>
